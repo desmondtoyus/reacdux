@@ -19,7 +19,7 @@ const routes = require("./routes");
 app.use(routes);
 
 models.sequelize.sync().then(function () {
- console.log('DATABASE CONNECTED SUCCESSFULLY', port);
+ console.log('DATABASE CONNECTED SUCCESSFULLY');
 })
 .catch(err=>console.log(err))
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
