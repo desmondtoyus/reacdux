@@ -13,10 +13,10 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage/home';
 import About from '../pages/AboutPage/about';
 // import FeaturePage from 'containers/FeaturePage/Loadable';
-import NotFoundPage from '../pages/NotFoundPage/Loadable';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import './style.scss';
+// import './style.scss';
 
 const App = () => (
   <div className="app-wrapper">

@@ -1,7 +1,8 @@
 import { combineReducers} from "redux";
-import { userReducer } from "./redux/reducers/index";
+import { userReducer, modalReducer  } from "./redux/reducers/index";
 
 const configureStore = combineReducers({
-  users: userReducer
+  users: userReducer,
+  modals: modalReducer 
 });
 export default configureStore;

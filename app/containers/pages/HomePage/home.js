@@ -19,6 +19,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { listUsers} from "../../../redux/actions/user.action";
+import ModalManager from "../../../components/modal";
 
 const CustomTableCell = withStyles(theme => ({
     head: {
@@ -59,7 +60,6 @@ class Home extends React.Component {
   };
 
   renderTable = ()=>{
-    const { classes } = this.props;
       return(
         <div>
        {this.props.users ? <Table className={classes.table}>
@@ -93,6 +93,7 @@ class Home extends React.Component {
 
     return (
       <div className={classes.root}>
+       <ModalManager currentModal={'LOGIN'}/>
         <AppBar position="static" color="default">
           <Tabs
             value={tabIndex }

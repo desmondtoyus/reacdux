@@ -8,6 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import { Helmet } from 'react-helmet';
 
 const styles = theme => ({
   margin: {
@@ -25,6 +26,11 @@ render(){
   const { classes } = this.props;
   return (
     <div>
+           <Helmet>
+          <title>About Page</title>
+          <meta name="description" content="A React.js Boilerplate application About Page" />
+        </Helmet>
+
       <FormControl className={classes.margin}>
         <InputLabel htmlFor="input-with-icon-adornment">With a start adornment</InputLabel>
         <Input
