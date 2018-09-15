@@ -1,0 +1,89 @@
+============================================
+npm install pg pg-hstore sequelize --save
+=======
+ls -l ====list users
+sudo chown -R bwaadmin node_modules
+https://github.com/flexdinesh/react-redux-boilerplate
+https://medium.com/@alexanderleon/implement-social-authentication-with-react-restful-api-9b44f4714fa
+https://blog.strapi.io/protected-routes-and-authentication-with-react-and-node-js/
+https://github.com/strapi/strapi-examples/tree/master/good-old-react-authentication-flow
+================================================
+https://www.macobserver.com/tmo/article/how-to-remove-an-unwanted-process-in-os-x
+===============================================
+git config --global http.sslVerify false
+ssh-add -K ~/ssh/id_rsayHkuDOiD8wi@
+ssh-add -K ~/ssh/id_rsa
+sudo chmod 400 sample-pair.pem
+============GODADDY==========================
+chmod 600 ~/godaddyssh/id_rsa.1534620022
+ssh desmondmi@osunpoly.edu.ng
+NODE JS HOSTING-https://www.a2hosting.com/
+https://www.a2hosting.com/nodejs-hosting
+https://my.a2hosting.com/
+==============================================
+A
+=============================================
+ssh ratingng@mi3-ss34.a2hosting.com -p 7822
+j[eyZl0CO125I.
+.htaccess
+================================================
+DEV 888 546 8946
+================================================
+After upload, from /c/Users/desmo access the git lab using
+ssh -i frontend.pem ubuntu@frontend-dev.bwaserver.com
+cd /var/deploy
+https://github.com/MailOnline/videojs-vast-vpaid
+https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
+===========================================================
+cd /var/deploy/armada_ui
+git pull origin master
+npm run prod
+cd ../armada_services
+git pull origin master
+pm2 restart anthem
+========================================================
+DEPLOY TO PRODUCTION killall -9 node
+=================================
+desmo@DESKTOP-2F83J6F MINGW64 ~
+$ ssh -i sample-pair.pem ubuntu@jumpbox.pilotx.tv
+=====================================================
+ubuntu@ip-10-0-2-18:~$ ls
+aws-scripts-mon  bwacdn.pem  bwa-devops.pem  CloudWatchMonitoringScripts-1.2.1.zip  current_db_schema  current_deploy_scripts  ohio-test-1.pem  query_results.csv
+=================================================================
+ubuntu@ip-10-0-2-18:~$ ssh -i bwa-devops.pem ubuntu@frontend-staging.anthemx.tv
+Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-1044-aws x86_64)
+==================================================================================
+ubuntu@ip-10-0-2-56:~$ cd /var/deploy
+ubuntu@ip-10-0-2-56:/var/deploy$ ls
+armada_services  armada_ui  config.json  index.html
+ubuntu@ip-10-0-2-56:/var/deploy$
+================ UPLOAD CDN================================
+$ scp -i ~sample-pair.pem C:/Users/desmo/code/BACKUP/videoplayer/Jan18/Pilot-Player/pilot-video-player.min.js ubuntu@jumpbox.anthemx.tv:/home/ubuntu/
+code\ad_manager\video
+=====================================================================
+http://player.pilotxcdn.com/player.js
+==========DEPLOY CDN==========================================================
+from the jumpbox:
+
+scp -i bwacdn.pem pilot-player0.min.css ec2-user@cdn.anthemx.tv:/var/www/html/assets/cdn/player/player.css
+
+scp -i bwacdn.pem VPAIDClient.js ec2-user@cdn.anthemx.tv:/var/www/html/assets/cdn/mirror/VPAIDClient.js
+
+scp -i ~bwacdn.pem "/code/Radar/tagmanager/radar.js" ec2@cdn.pilotx.tv:/var/www/html/assets/cdn/tagmanager/
+
+Run the Mongo daemon, in one terminal window run ~/mongodb/bin/mongod. This will start the Mongo server.
+Run the Mongo shell, with the Mongo daemon running in one terminal, type ~/mongodb/bin/mongo in another terminal window. This will run the Mongo shell which is an application to access data in MongoDB.
+To exit the Mongo shell run quit()
+To stop the Mongo daemon hit ctrl-c
+
+~sample-pair.pem /Users/bwaadmin/code/Radar/tagmanager/radar.js ubuntu@jumpbox.pilotx.tv:/home/ubuntu/
+FROM JUMPBOX
+scp -i bwacdn.pem radar.js ec2-user@cdn.anthemx.tv:/var/www/html/assets/cdn/tagmanager
+CREATING A SUBDOMAIN ON THE CDN
+ssh -i sample-pair.pem ubuntu@jumpbox.pilotx.tv
+Cd ~
+ssh -i bwacdn.pem ec2-user@cdn.pilotx.tv
+cd /etc/httpd/conf.d
+sudo vi httpd-vhosts.conf 
+cd /var/www/html/assets/cdn/
+mkdir tagmanager

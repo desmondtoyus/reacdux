@@ -13,7 +13,7 @@ import {USER_LOGIN_MODAL, CLOSE_USER_MODAL, USER_LOGIN_ERROR,
   }
 
   export const signIn  = (data) => dispatch => {
-    axios.post(`http://localhost:5000/api/auth/login`, data) 
+    axios.post(`api/auth/login`, data) 
       .then(response => {
         localStorage.setItem('jwtToken', response.data.token);
         dispatch({type: USER_LOGIN, payload: response.data});
