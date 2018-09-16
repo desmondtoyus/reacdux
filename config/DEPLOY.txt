@@ -21,11 +21,13 @@ NODE JS HOSTING-https://www.a2hosting.com/
 https://www.a2hosting.com/nodejs-hosting
 https://my.a2hosting.com/
 ==============================================
-A
+A2 HOSTING
 =============================================
 ssh ratingng@mi3-ss34.a2hosting.com -p 7822
-j[eyZl0CO125I.
+Password: j[eyZl0CO125I.
 .htaccess
+npm install -g pngquant-bin
+DirectoryIndex reacdux/build/index.html
 ================================================
 DEV 888 546 8946
 ================================================
@@ -87,3 +89,10 @@ cd /etc/httpd/conf.d
 sudo vi httpd-vhosts.conf 
 cd /var/www/html/assets/cdn/
 mkdir tagmanager
+
+==========================================================================================
+
+Psql db user
+User: ratingng_desmondtoye
+Database: ratingng_db
+#3012Ife
