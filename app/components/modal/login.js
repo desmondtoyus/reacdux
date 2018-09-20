@@ -12,7 +12,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import LockIcon from "@material-ui/icons/LockOutlined";
 import Paper from "@material-ui/core/Paper";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { signInModal, signUpModal, closeUserModal, signIn, changeInput, logOut } from "../../redux/actions/modal.action";
+import { signInModal, signUpModal, closeUserModal,  changeInput} from "../../redux/actions/modal.action";
+import{signIn, signUp} from "../../redux/actions/user.action"
 import green from '@material-ui/core/colors/green';
 const styles = theme => ({
     root: {
@@ -83,29 +84,42 @@ class Login extends Component{
         this.props.signInModal(); 
       };
     
-      handleLogOut = (e) => {
-        e.preventDefault();
-        this.props.logOut(); 
-      };
 
       handleClose = (e) => {
         e.preventDefault();
         this.props.closeUserModal();
       };
     
+
       handleSignUp = (e)=>{
         e.preventDefault();
         this.props.signUpModal(); 
       }
 
-      handleSubmit = (e)=>{
+      handleChange = (event) => {
+        console.log(event.currentTarget.name, '=' , event.currentTarget.value)
+        this.props.changeInput({ prop: event.currentTarget.name, value: event.currentTarget.value });
+      }
 
-        const { email, password} = this.props
+      handleSubmit = (e)=>{
+        e.preventDefault();
+        const { email, password, showSignUpModal} = this.props
+        if (!showSignUpModal) {
         e.preventDefault();
         this.props.changeInput({ prop: 'loader', value: true });
         this.props.signIn({email, password})
+        } else {
+          e.preventDefault();
+          let payload ={
+            email,
+            password,
+            role:1
+          }
+          this.props.signUp(payload); 
+        }
         
       }
+
 
     render(){
         const{email, password, loader, showLoginModal, classes } = this.props;
@@ -123,9 +137,9 @@ class Login extends Component{
                   <Avatar className={classes.avatar}>
                     <LockIcon />
                   </Avatar>
-                  <Typography variant="headline">{!this.props.isSignUp ? 'Sign in' : 'Sign up'}</Typography>
+                  <Typography variant="headline">{!this.props.showSignUpModal ? 'Sign in' : 'Sign up'}</Typography>
                   <form className={classes.form}>
-                  {this.props.isSignUp ? <FormControl margin="normal" required fullWidth>
+                  {this.props.showSignUpModal ? <FormControl margin="normal" required fullWidth>
                       <InputLabel htmlFor="email">Full Name</InputLabel>
                       <Input
                         id="name"
@@ -158,7 +172,7 @@ class Login extends Component{
                         onChange={this.handleChange}
                       />
                     </FormControl>
-                     {!this.props.isSignUp ? <Button
+                     {!this.props.showSignUpModal ? <Button
                       type="submit"
                       fullWidth
                       variant="raised"
@@ -176,7 +190,7 @@ class Login extends Component{
                       variant="raised"
                       color="default"
                       className={classes.submit}
-                      onClick={this.handleSignUp}
+                      onClick={(this.props.showSignUpModal)?(this.handleSubmit):(this.handleSignUp)}
                     >
                       Sign Up
                     </Button>
@@ -190,24 +204,24 @@ class Login extends Component{
 }
 const mapStateToProps = state => {
     const {
-      isSignUp,
+      showSignUpModal,
       email,
       password,
       name,
-      showLoginModal,
-      loader} = state.modals
-  
+      showLoginModal
+      } = state.modals
+      const {loader, loginSuccess  } = state.users
     return { 
-      isSignUp,
+      showSignUpModal,
       email,
       password,
       name,
       showLoginModal,
-      loader };
+      loader, loginSuccess };
   };
 
 
 export default compose(
     withStyles(styles),
-    connect(mapStateToProps, {signIn, changeInput, signInModal, signUpModal, logOut, closeUserModal })
+    connect(mapStateToProps, { changeInput, signInModal, signUpModal, closeUserModal, signUp, signIn })
   )(Login);

@@ -9,7 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import {signInModal, signUpModal, closeUserModal, signIn, changeInput, logOut} from "../../redux/actions/user.action";
+import {signInModal, signUpModal, closeUserModal} from "../../redux/actions/modal.action";
+import{ logOut, verifyUsers} from "../../redux/actions/user.action"
 import green from '@material-ui/core/colors/green';
 // import createHistory from 'history/createBrowserHistory'
  
@@ -71,29 +72,39 @@ const styles = theme => ({
 });
 
 class Header extends React.Component {
-// componentDidMount(){
-//   if (localStorage.getItem('jwtToken')) {
-//     let token =  localStorage.getItem('jwtToken')
-//   const tokenParts = token.split(' ');
-//   const encodedPayload =  tokenParts[1];
-//  let user={
-//    token:encodedPayload
-//  }
-//   this.props.verifyUsers(user);
+
+  //HOLD USER LOGIN DATA EVEN WHEN PAGE IS REFRESHED
+componentDidMount(){
+  if (localStorage.getItem('jwtToken')) {
+    let token =  localStorage.getItem('jwtToken')
+  const tokenParts = token.split(' ');
+  const encodedPayload =  tokenParts[1];
+ let user={
+   token:encodedPayload
+ }
+  this.props.verifyUsers(user);
     
-//   } else {
-//     console.log('NOT LOGGED IN');
-//   }
-  
-// }
-
-componentWillUpdate(nextProps){
-  if (this.props.user !== nextProps.user) {
-    if(nextProps.user){
-    this.props.history.push('/about')
-    }
+  } else {
+    console.log('NOT LOGGED IN');
   }
+  
+}
 
+componentWillReceiveProps(nextProps){
+if (this.props.loginSuccess !== nextProps.loginSuccess){
+  if (localStorage.getItem('jwtToken')) {
+    let token =  localStorage.getItem('jwtToken')
+  const tokenParts = token.split(' ');
+  const encodedPayload =  tokenParts[1];
+ let user={
+   token:encodedPayload
+ }
+  this.props.verifyUsers(user);
+    
+  } else {
+    console.log('NOT LOGGED IN');
+  }
+}
 }
 
   handleOpen = (e) => {
@@ -106,10 +117,7 @@ componentWillUpdate(nextProps){
     this.props.logOut(); 
   };
 
-  handleChange = (event) => {
-    console.log(event.currentTarget.name, '=' , event.currentTarget.value)
-    this.props.changeInput({ prop: event.currentTarget.name, value: event.currentTarget.value });
-  }
+  
 
   handleClose = (e) => {
     e.preventDefault();
@@ -121,14 +129,7 @@ componentWillUpdate(nextProps){
     this.props.signUpModal(); 
   }
 
-  handleSubmit = (e)=>{
 
-    const { email, password} = this.props
-    e.preventDefault();
-    this.props.changeInput({ prop: 'loader', value: true });
-    this.props.signIn({email, password})
-    
-  }
   render() {
     const { classes } = this.props;
     const{email, password, loader} = this.props;
@@ -181,5 +182,5 @@ const mapStateToProps = state => {
 
 export default compose(
   withStyles(styles),
-  connect(mapStateToProps, {signIn, changeInput, signInModal, signUpModal, logOut, closeUserModal})
+  connect(mapStateToProps, {  signInModal, signUpModal, logOut, closeUserModal, verifyUsers})
 )(Header);

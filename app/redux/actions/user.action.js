@@ -6,7 +6,7 @@ import { FETCH_USERS, USER_LOGIN_MODAL, CLOSE_USER_MODAL, USER_INPUT, VERIFY_USE
 // Authenticated Routes
   export const listUsers = (value) => dispatch => {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-      axios.get(`http://localhost:5000/api/user`)
+      axios.get(`api/user`)
         .then(response => {
           dispatch({type: FETCH_USERS, payload: response.data});
         })
@@ -18,7 +18,7 @@ import { FETCH_USERS, USER_LOGIN_MODAL, CLOSE_USER_MODAL, USER_INPUT, VERIFY_USE
 
   export const verifyUsers = (data) => dispatch => {
     // axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-      axios.post(`http://localhost:5000/api/auth/verify`, data)
+      axios.post(`api/auth/verify`, data)
         .then(response => {
           dispatch({type: VERIFY_USER, payload: response.data});
         })
@@ -29,16 +29,19 @@ import { FETCH_USERS, USER_LOGIN_MODAL, CLOSE_USER_MODAL, USER_INPUT, VERIFY_USE
 
   }
 
-  export const changeInput = ({ prop, value }) => dispatch => {
-    dispatch({ type: USER_INPUT, prop, value });
-  };
-
-  export const signInModal  = () => dispatch => {
-    dispatch({type: USER_LOGIN_MODAL});
+  export const signUp =(data) =>dispatch=>{
+    axios.post(`api/auth/register`, data)
+    .then(response=>{
+      localStorage.setItem('jwtToken', response.data.token);
+      dispatch({type: USER_SIGNUP, payload: response.data});
+    })
+    .catch(err=>{
+      dispatch({type: USER_SIGNUP_ERROR, payload:'Sign In Error' });
+    })
   }
 
   export const signIn  = (data) => dispatch => {
-    axios.post(`http://localhost:5000/api/auth/login`, data) 
+    axios.post(`api/auth/login`, data) 
       .then(response => {
         localStorage.setItem('jwtToken', response.data.token);
         dispatch({type: USER_LOGIN, payload: response.data});
@@ -48,15 +51,10 @@ import { FETCH_USERS, USER_LOGIN_MODAL, CLOSE_USER_MODAL, USER_INPUT, VERIFY_USE
         dispatch({type: USER_LOGIN_ERROR, payload:'Sign In Error' });
       })
   }
+  
   export const logOut  = () => {
   localStorage.removeItem('jwtToken');
   window.location.reload();
   }
 
-  export const  signUpModal = () => dispatch => {
-    dispatch({type: USER_SIGNUP_MODAL});
-  }
-
-  export const  closeUserModal = () => dispatch => {
-    dispatch({type: CLOSE_USER_MODAL});
-  }
+ 
