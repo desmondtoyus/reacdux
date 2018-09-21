@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "ratingng_desmondtoye",
-    "password": "#3012Ife",
+    "username": "ratingng_admin",
+    "password": "",
     "database": "ratingng_db",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "ratingng_desmondtoye",
-    "password": "#3012Ife",
+    "username": "ratingng_admin",
+    "password": "",
     "database": "ratingng_db",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "ratingng_desmondtoye",
-    "password": "#3012Ife",
+    "username": "ratingng_admin",
+    "password": "",
     "database": "ratingng_db",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres"
   }
 }
