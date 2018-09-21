@@ -28,7 +28,7 @@ render(){
     <div>
            <Helmet>
           <title>About Page</title>
-          <meta name="description" content="A React.js Boilerplate application About Page" />
+          <meta name="description" content="Describe this page" />
         </Helmet>
 
       <FormControl className={classes.margin}>

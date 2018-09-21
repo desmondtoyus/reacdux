@@ -23,10 +23,10 @@ import LoginPage from "../pages/LoginPage";
 const App = () => (
   <div className="app-wrapper">
     <Helmet
-      titleTemplate="%s - React.js Boilerplate"
-      defaultTitle="React.js Boilerplate"
+      titleTemplate="%s - Rating.Ng"
+      defaultTitle="Rating.Ng"
     >
-      <meta name="description" content="A React.js Boilerplate application" />
+      <meta name="description" content="Rate products, service and experience" />
     </Helmet>
     <Header />
     <Switch>

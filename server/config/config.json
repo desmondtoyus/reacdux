@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "ratingng_admin",
-    "password": "",
+    "password": "#3010sade",
     "database": "ratingng_db",
     "host": "localhost",
     "dialect": "postgres"
