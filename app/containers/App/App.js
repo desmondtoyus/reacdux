@@ -16,7 +16,7 @@ import About from '../pages/AboutPage/about';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import LoginPage from "../pages/LoginPage";
+import LoginPage from "../pages/LoginPage/";
  
 // import './style.scss';
 
@@ -32,7 +32,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={HomePage} />
       <Route path="/about" component={About } />
-      <Route path="/dasboard" component={LoginPage } />
+      <Route path="/dashboard" component={LoginPage } />
       <Route path="" component={NotFoundPage} />
     </Switch>
     <Footer />

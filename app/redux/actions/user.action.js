@@ -32,7 +32,7 @@ import { FETCH_USERS, USER_LOGIN_MODAL, CLOSE_USER_MODAL, USER_INPUT, VERIFY_USE
   export const signUp =(data) =>dispatch=>{
     axios.post(`api/auth/register`, data)
     .then(response=>{
-      localStorage.setItem('jwtToken', response.data.token);
+      localStorage.setItem('jwtToken', response.data.password);
       dispatch({type: USER_SIGNUP, payload: response.data});
     })
     .catch(err=>{
