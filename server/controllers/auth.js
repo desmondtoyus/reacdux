@@ -44,7 +44,6 @@ exports.register =  function(req, res) {
   };
   
   exports.verifyUser = function(req, res){
-    console.log("USER = ", jwt.decode(req.body.token, settings.secret))
 let user = jwt.decode(req.body.token, settings.secret)
 res.json({user});
   }

@@ -29,7 +29,7 @@ export default function(state = INITIAL_STATE, action) {
       case USER_LOGIN_ERROR :
       case USER_SIGNUP_ERROR :
       case VERIFY_USER_ERROR:
-        return { ...INITIAL_STATE, errorMsg:action.errorMsg, loader: false};
+        return { ...INITIAL_STATE, errorMsg:action.payload, loader: false};
         case USER_SIGNUP:
         return { ...state, user:action.payload, loader: false, loginSuccess:true};
         case USER_LOGIN:

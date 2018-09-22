@@ -13,21 +13,26 @@ import { FETCH_USERS, USER_LOGIN_MODAL, CLOSE_USER_MODAL, USER_INPUT, VERIFY_USE
         .catch(err => {
           console.log(err);
         })
-
   }
 
-  export const verifyUsers = (data) => dispatch => {
-    // axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-      axios.post(`api/auth/verify`, data)
-        .then(response => {
-          dispatch({type: VERIFY_USER, payload: response.data});
-        })
-        .catch(err => {
-          console.log(err);
-          dispatch({type: VERIFY_USER_ERROR, payload: err});
-        })
+  export const verifyUsers = (data) => async (dispatch) => {
+    try {
+      const res = await axios.post(`api/auth/verify`, data)
+      if (res.data.user) {
+        await  dispatch({type: VERIFY_USER, payload: res.data});
+        return true;
+      } else {
+        // console.log('FALSE= ', "Fraudulent login attempt")
+        await  dispatch({type: VERIFY_USER_ERROR, payload: "Fraudulent login attempt"});
+        return false;
+      }
+    } catch(err) {
+      await  dispatch({type: VERIFY_USER_ERROR, payload: err});
+      return false;
 
+    }
   }
+
 
   export const signUp =(data) =>dispatch=>{
     axios.post(`api/auth/register`, data)
