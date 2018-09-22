@@ -4,21 +4,21 @@
     "password": "#3010sade",
     "database": "ratingng_db",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "ratingng_admin",
-    "password": "",
+    "password": "#3010sade",
     "database": "ratingng_db",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "ratingng_admin",
-    "password": "",
+    "password": "#3010sade",
     "database": "ratingng_db",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
 
