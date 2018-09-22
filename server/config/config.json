@@ -4,7 +4,7 @@
     "password": "#3010sade",
     "database": "ratingng_db",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "test": {
     "username": "ratingng_admin",
@@ -18,7 +18,7 @@
     "password": "",
     "database": "ratingng_db",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "mysql"
   }
 }
 

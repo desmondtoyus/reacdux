@@ -25,10 +25,16 @@ var  Offering = sequelize.define("Offering", {
         allowNull: true,
       },
       images: {
-        allowNull: true,
-        type: DataTypes.ARRAY(DataTypes.INTEGER)
-      },
-
+        type: DataTypes.STRING,
+        allowNull: false,
+        get() {
+            return this.getDataValue('images').split(';')
+        },
+        set(val) {
+           this.setDataValue('images',val.join(';'));
+        },
+    },
+    
       city: {
         type: DataTypes.STRING,
         allowNull: true,

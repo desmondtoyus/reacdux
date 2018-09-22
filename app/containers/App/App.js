@@ -23,7 +23,7 @@ import LoginPage from "../pages/LoginPage";
 const App = () => (
   <div className="app-wrapper">
     <Helmet
-      titleTemplate="%s - Rating.Ng"
+      titleTemplate="%s - RatingNg"
       defaultTitle="Rating.Ng"
     >
       <meta name="description" content="Rate products, service and experience" />

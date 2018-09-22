@@ -20,6 +20,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { listUsers} from "../../../redux/actions/user.action";
 import ModalManager from "../../../components/modal";
+import { Helmet } from 'react-helmet';
 
 const CustomTableCell = withStyles(theme => ({
     head: {
@@ -62,6 +63,10 @@ class Home extends React.Component {
   renderTable = ()=>{
       return(
         <div>
+            <Helmet>
+          <title>Home Page</title>
+          <meta name="description" content="View ratings before you shop" />
+        </Helmet>
        {this.props.users ? <Table className={classes.table}>
         <TableHead>
           <TableRow>
