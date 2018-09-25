@@ -25,9 +25,33 @@ A2 HOSTING
 =============================================
 ssh ratingng@mi3-ss34.a2hosting.com -p 7822
 Password: j[eyZl0CO125I.
+
+psql -U ratingng_admin -h localhost -p 5432 ratingng_db
+npm install pg pg-hstore sequelize --save
 .htaccess
 npm install -g pngquant-bin
 DirectoryIndex reacdux/build/index.html
+Support PIN
+npm install mysql2 --save
+17560445
+https://tecadmin.net/fatal-ident-authentication-failed-for-user-postgres/
+ MySQL® Databases
+Manage User Privileges
+User: ratingng_admin
+
+RewriteRule ^(.*)$ http://127.0.0.1:50017/$1 [P,L]
+
+Database: ratingng_db
+pm2 kill
+
+============================================
+RewriteEngine On
+RewriteRule ^$ http://127.0.0.1:50017/ [P,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://127.0.0.1:50017/$1 [P,L]
+DirectoryIndex reacdux/build/index.html
+===============================================
 ================================================
 DEV 888 546 8946
 ================================================
@@ -93,6 +117,12 @@ mkdir tagmanager
 ==========================================================================================
 
 Psql db user
-User: ratingng_desmondtoye
-Database: ratingng_db
-#3012Ife
+User: ratingng_admin
+#3010s--
+
+Hi,
+I need someone to help me design a few html pages (about 10 pages). I already have images of these pages.
+I am a react developer and I will still convert these html to react component, so I only require html, bootstrap and css.
+Let me know if you are available and your price. 
+Thanks.
+Desmond.
