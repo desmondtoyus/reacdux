@@ -15,6 +15,7 @@ app.use(cors())
 var models = require("./models");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, '../app/public')));
 const routes = require("./routes");
 app.use(routes);
 
