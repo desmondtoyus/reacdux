@@ -7,6 +7,7 @@ const argv = require('./util/argv');
 const port = require('./util//port');
 const setup = require('./middlewares/frontendMiddleware');
 const { resolve } = require('path');
+const path = require('path');
 
 const app = express();
 var bodyParser = require("body-parser");
