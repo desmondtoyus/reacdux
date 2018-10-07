@@ -19,9 +19,8 @@ import { createStore, applyMiddleware } from "redux";
 
 import { ConnectedRouter } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
-import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
-
+import history from './history';
 // Import root app
 import App from 'containers/App';
 
@@ -48,7 +47,7 @@ openSansObserver.load().then(() => {
 
 // Create redux store with history
 const initialState = {};
-const history = createHistory();
+
 const middleware = [reduxThunk];
 const store = createStore(
   configureStore,
