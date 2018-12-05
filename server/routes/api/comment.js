@@ -8,7 +8,6 @@ router.route("/")
   .get(commentController.listComments)
   .post(bodyParser, commentController.createComment)
   .put(bodyParser, commentController.updateComment );
-
 // Matches with "/api/author/:id"
 router
   .route("/:id")
